@@ -17,73 +17,153 @@
 * [ ] Saturn
 * [ ] Uranus
 
-# Getting Started with Create React App
+# Zoroz Intern Assignment 
+## Problem Statement
+Develop a mock eCommerce website similar to Amazon, including:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Homepage
+Product Listing Page
+Product Detail Page
+Checkout Page
+Mock Payment Success/Failure Page
+Requirements:
 
-## Available Scripts
+Use mock APIs to load product inventory.
+Complete the flow from product selection to checkout and payment success/failure.
+This should showcase an end-to-end transaction process using frontend and backend skills.
+Prerequisites
+Node.js (v14 or later)
+npm (usually comes with Node.js)
+Git
+Folder Structure
+rudy-shop/
+│
+├── public/
+│   └── hero-image.jpg
+│
+├── src/
+│   ├── components/
+│   │   ├── Header.js
+│   │   ├── Footer.js
+│   │   └── LoadingSpinner.js
+│   ├── context/
+│   │   ├── AuthContext.js
+│   │   └── CartContext.js
+│   ├── pages/
+│   │   ├── HomePage.js
+│   │   ├── ProductListPage.js
+│   │   ├── ProductDetailPage.js
+│   │   ├── CartPage.js
+│   │   ├── CheckoutPage.js
+│   │   ├── PaymentResultPage.js
+│   │   └── LoginPage.js
+│   ├── styles/
+│   │   ├── global.css
+│   │   ├── variables.css
+│   │   ├── Header.module.css
+│   │   ├── Footer.module.css
+│   │   ├── HomePage.module.css
+│   │   ├── ProductListPage.module.css
+│   │   ├── ProductDetailPage.module.css
+│   │   ├── CartPage.module.css
+│   │   ├── CheckoutPage.module.css
+│   │   ├── PaymentResultPage.module.css
+│   │   └── LoginPage.module.css
+│   ├── utils/
+│   │   └── api.js
+│   └── App.js
+│
+├── .env.local
+├── package.json
+└── README.md
 
-In the project directory, you can run:
 
-### `npm start`
+Local Setup
+Clone the repository:
+git clone https://github.com/RudradevArya/Rudys-Shop.git
+cd Rudys-Shop
 
-Runs the app in the development mode.
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.
-You may also see any lint errors in the console.
+Install dependencies:
+npm install
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Set up environment variables: Create a .env.local file in the root directory with the following content:
+REACT_APP_API_URL=https://fakestoreapi.com
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Run the development server:
+npm start
 
-The build is minified and the filenames include the hashes.
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Open http://localhost:3000 in your browser.
+Features
+Product listing with category filtering
+Product details page
+Shopping cart functionality
+User authentication (mock)
+Checkout process
+Responsive design
+API Documentation
+This project uses the FakeStoreAPI for mock data. Here are the main endpoints used:
 
-### `npm run eject`
+Products
+Get all products: GET /products
+Get a single product: GET /products/{id}
+Get products in a specific category: GET /products/category/{categoryName}
+Categories
+Get all categories: GET /products/categories
+Authentication
+Login: POST /auth/login Body:
+{
+    "username": "johnd",
+    "password": "m38rmF$"
+  }
+JS
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+For more details, visit FakeStoreAPI Documentation.
 
-## Learn More
+Task List
+ Create skeleton frontend for fake-store-api
+ Homepage (has 4 featured products)
+ Product listings page
+ Product details page
+ Get cart working
+ Dummy auth
+ Dummy payment
+ Payment cancelled/success page
+ Better UI
+ Responsive design
+ Footer
+ Logo
+ Icons and fonts
+Technologies Used
+React
+React Router
+Context API for state management
+CSS Modules for styling
+FakeStoreAPI for mock data
+Deployment
+The application is deployed using [Deployment Platform, e.g., Vercel, Netlify]. You can view the live application at [Your Deployed URL].
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To deploy your own version:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Fork this repository
+Connect your forked repo to your preferred deployment platform
+Set up the necessary environment variables
+Deploy
+Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-### Code Splitting
+License
+MIT
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Acknowledgements
+FakeStoreAPI for providing mock e-commerce data
+React for the frontend framework
+React Router for routing
+CSS Modules for component-scoped styling
+Made by Rudradev Arya as Zoroz Intern Assessment
