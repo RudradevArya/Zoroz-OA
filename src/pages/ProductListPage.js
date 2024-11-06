@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import { getProducts, getCategories } from '../utils/api';
+import { useCart } from '../context/CartContext';
 import styles from '../styles/ProductListPage.module.css';
 
 const ProductListPage = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('');
+  const { addToCart } = useCart();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,6 +26,11 @@ const ProductListPage = () => {
   const filteredProducts = selectedCategory
     ? products.filter(product => product.category === selectedCategory)
     : products;
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    alert('Product added to cart!');
+  };
 
   return (
     <div>
@@ -48,7 +56,8 @@ const ProductListPage = () => {
               <img src={product.image} alt={product.title} />
               <h3>{product.title}</h3>
               <p>${product.price}</p>
-              <button>Add to Cart</button>
+              <Link to={`/product/${product.id}`}>View Details</Link>
+              <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
             </div>
           ))}
         </div>

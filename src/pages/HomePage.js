@@ -20,7 +20,7 @@ const HomePage = () => {
     <div>
       <Header />
       <main className={styles.main}>
-        <h1>Welcome to MockShop</h1>
+        <h1>Welcome to Rudy's-Shop</h1>
         <section className={styles.featuredProducts}>
           <h2>Featured Products</h2>
           <div className={styles.productGrid}>

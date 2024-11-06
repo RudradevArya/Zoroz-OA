@@ -32,4 +32,3 @@ export const getCategories = async () => {
   }
 };
 
-// Add more API functions as needed

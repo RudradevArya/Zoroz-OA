@@ -3,10 +3,12 @@ import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import { getProduct } from '../utils/api';
 import styles from '../styles/ProductDetailPage.module.css';
+import { useCart } from '../context/CartContext';
 
 const ProductDetailPage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -21,6 +23,11 @@ const ProductDetailPage = () => {
     return <div>Loading...</div>;
   }
 
+  const handleAddToCart = () => {
+    addToCart(product);
+    alert('Product added to cart!');
+  };
+
   return (
     <div>
       <Header />
@@ -32,7 +39,7 @@ const ProductDetailPage = () => {
             <p className={styles.price}>${product.price}</p>
             <p className={styles.description}>{product.description}</p>
             <p className={styles.category}>Category: {product.category}</p>
-            <button className={styles.addToCart}>Add to Cart</button>
+            <button className={styles.addToCart} onClick={handleAddToCart}>Add to Cart</button>
           </div>
         </div>
       </main>

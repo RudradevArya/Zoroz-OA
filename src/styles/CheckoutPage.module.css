@@ -1,0 +1,45 @@
+.main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .checkoutContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+  
+  .orderSummary {
+    width: 40%;
+  }
+  
+  .cartItem {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+  
+  .total {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .checkoutForm {
+    width: 50%;
+  }
+  
+  .checkoutForm input,
+  .checkoutForm textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .checkoutForm button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    cursor: pointer;
+  }
