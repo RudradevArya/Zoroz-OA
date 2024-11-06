@@ -1,44 +1,147 @@
-.main {
-    padding: 2rem;
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/hero.avif');
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.heroContent {
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.ctaButton {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: darken(var(--primary-color), 10%);
+}
+
+.featuredProducts, .categories, .about {
+  padding: 4rem 0;
+}
+
+.featuredProducts h2, .categories h2, .about h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.productCard {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.productCard img {
+  max-width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.productCard h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.productCard p {
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.productCard a {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.productCard a:hover {
+  background-color: darken(var(--secondary-color), 10%);
+}
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.categoryCard {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.categoryCard:hover {
+  background-color: darken(var(--primary-color), 10%);
+}
+
+.about {
+  background-color: #f0f0f0;
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
   }
-  
-  .featuredProducts {
-    margin-top: 2rem;
-  }
-  
-  .productGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
-  }
-  
-  .productCard {
-    border: 1px solid #ddd;
-    padding: 1rem;
-    text-align: center;
-  }
-  
-  .productCard img {
-    max-width: 100%;
-    height: 200px;
-    object-fit: contain;
-  }
-  
-  .productCard h3 {
-    margin: 0.5rem 0;
+
+  .hero p {
     font-size: 1rem;
   }
-  
-  .productCard p {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
+
+  .featuredProducts, .categories, .about {
+    padding: 2rem 0;
   }
-  
-  .productCard a {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-  }
+}

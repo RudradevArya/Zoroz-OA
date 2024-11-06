@@ -1,28 +1,97 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: #f8f8f8;
+  background-color: var(--primary-color);
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  margin-left: 1.5rem;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.nav a:hover {
+  opacity: 0.8;
+}
+
+.cartLink {
+  position: relative;
+}
+
+.cartBadge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: 50%;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.username {
+  color: white;
+  font-weight: 500;
+}
+
+.logoutBtn, .loginBtn {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.logoutBtn:hover, .loginBtn:hover {
+  background-color: darken(var(--secondary-color), 10%);
+}
+
+@media (max-width: 768px) {
+  .headerContent {
+    flex-direction: column;
   }
-  
-  .logo a {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    text-decoration: none;
+
+  .nav {
+    margin-top: 1rem;
   }
-  
+
   .nav ul {
-    display: flex;
-    list-style-type: none;
+    flex-wrap: wrap;
+    justify-content: center;
   }
-  
+
   .nav li {
-    margin-left: 1rem;
+    margin: 0.5rem;
   }
-  
-  .nav a {
-    color: #333;
-    text-decoration: none;
-  }
+}

@@ -16,25 +16,31 @@ const Header = () => {
   };
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>
-        <Link to="/">Rudy's-Shop</Link>
+      <div className={styles.headerContent}>
+        <div className={styles.logo}>
+          <Link to="/">Rudy's Shop</Link>
+        </div>
+        <nav className={styles.nav}>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/products">Products</Link></li>
+            <li>
+              <Link to="/cart" className={styles.cartLink}>
+                Cart
+                {itemCount > 0 && <span className={styles.cartBadge}>{itemCount}</span>}
+              </Link>
+            </li>
+            {user ? (
+              <>
+                <li><span className={styles.username}>Hello, {user.username}</span></li>
+                <li><button onClick={handleLogout} className={styles.logoutBtn}>Logout</button></li>
+              </>
+            ) : (
+              <li><Link to="/login" className={styles.loginBtn}>Login</Link></li>
+            )}
+          </ul>
+        </nav>
       </div>
-      <nav className={styles.nav}>
-        <ul>
-          <li><Link to="/products">Products</Link></li>
-          <li>
-            <Link to="/cart">Cart ({itemCount})</Link>
-          </li>
-          {user ? (
-            <>
-              <li>Welcome, {user.username}</li>
-              <li><button onClick={handleLogout}>Logout</button></li>
-            </>
-          ) : (
-            <li><Link to="/login">Login</Link></li>
-          )}
-        </ul>
-      </nav>
     </header>
   );
 };
