@@ -122,3 +122,7 @@ POST /auth/login Body:
     }
 
 For more details, visit FakeStoreAPI Documentation.
+
+## Outputs
+
+![Animated gif demo](demo/demo.gif)
