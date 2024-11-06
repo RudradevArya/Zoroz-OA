@@ -1,17 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import { useCart } from '../context/CartContext';
 import styles from '../styles/CheckoutPage.module.css';
+import { useAuth } from '../context/AuthContext';
 
 const CheckoutPage = () => {
   const { cart, clearCart } = useCart();
+  const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     address: '',
   });
+
+  useEffect(() => {
+    if (!isAuthenticated()) {
+      navigate('/login');
+    }
+  }, [isAuthenticated, navigate]);
 
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
@@ -26,9 +34,13 @@ const CheckoutPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Here you would typically send the order to a backend API
+    const isSuccessful = Math.random() < 0.7;
     console.log('Order submitted:', { ...formData, cart, total });
     clearCart();
-    navigate('/payment-result?status=success');
+    navigate(`/payment-result?status=${isSuccessful ? 'success' : 'failure'}`);
+    // console.log('Order submitted:', { ...formData, cart, total });
+    // clearCart();
+    // navigate('/payment-result?status=success');
   };
 
   if (cart.length === 0) {

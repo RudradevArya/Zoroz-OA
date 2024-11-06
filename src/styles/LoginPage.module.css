@@ -1,28 +1,36 @@
 .main {
-    padding: 2rem;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
-  .loginForm {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .loginForm input {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-  }
-  
-  .loginForm button {
-    padding: 0.5rem;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .error {
-    color: red;
-    margin-top: 1rem;
-  }
+  padding: 2rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.notice {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginForm input {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+.loginForm button {
+  padding: 0.5rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  margin-top: 1rem;
+}

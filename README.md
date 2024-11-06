@@ -6,13 +6,13 @@
 * [x] dummy details page
 * [x] get cart working
 * [x] dummy checkout
-* [ ] dummy auth
-* [ ] dummy payment
-* [ ] dummy payment cancelled/success page
-* [ ] better ui
-* [ ] responsive
-* [ ] footer
-* [ ] logo?
+* [x] dummy auth
+* [x] dummy payment
+* [x] dummy payment cancelled/success page (70-80% success randomised rate)
+* [ ] better ui (LOL)
+* [x] responsive
+* [x] footer
+* [ ] logo? 
 * [ ] icons and fonts
 * [ ] Saturn
 * [ ] Uranus

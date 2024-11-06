@@ -8,7 +8,8 @@ import CheckoutPage from './pages/CheckoutPage';
 import PaymentResultPage from './pages/PaymentResultPage';
 import CartPage from './pages/CartPage';
 import { AuthProvider } from './context/AuthContext';
-// import LoginPage from './pages/LoginPage';
+import LoginPage from './pages/LoginPage';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -23,7 +24,9 @@ function App() {
               <Route path="/cart" element={<CartPage />} />
               <Route path="/checkout" element={<CheckoutPage />} />
               <Route path="/payment-result" element={<PaymentResultPage />} />
+              <Route path="/login" element={<LoginPage />} />
             </Routes>
+            <Footer />
           </div>
         </Router>
       </CartProvider>

@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext } from 'react';
+import { useAuth } from './AuthContext';
 
 const CartContext = createContext();
 
@@ -6,8 +7,13 @@ export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+  const { isAuthenticated } = useAuth();
 
   const addToCart = (product) => {
+    if (!isAuthenticated()) {
+      alert('Please log in to add items to your cart.');
+      return;
+    }
     setCart((prevCart) => {
       const existingItem = prevCart.find((item) => item.id === product.id);
       if (existingItem) {
